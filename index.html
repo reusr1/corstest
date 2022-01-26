@@ -2,9 +2,6 @@ check the console output - this is a test to see if we can get cors working with
 <script>
 
 fetch("https://publish-p54353-e359503.adobeaemcloud.com/content/_cq_graphql/global/endpoint.json", {
-  "headers": {
-    "content-type": "application/json",
-  },
   "body": "{\"query\":\"{\\n  adventureList {\\n    items {\\n      _path\\n      adventureActivity\\n      adventureTitle\\n      adventurePrimaryImage {\\n        ...on ImageRef {\\n          _path\\n          mimeType\\n          width\\n          height\\n        }\\n      }\\n    }\\n  }\\n}\"}",
   "method": "POST"
 }).then(response => response.json()).then(data => { console.log(data); document.write(data); });
